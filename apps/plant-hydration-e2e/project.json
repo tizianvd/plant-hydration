@@ -1,0 +1,10 @@
+{
+  "name": "plant-hydration-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/plant-hydration-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["plant-hydration"],
+  "// targets": "to see all targets run: nx show project plant-hydration-e2e --web",
+  "targets": {}
+}

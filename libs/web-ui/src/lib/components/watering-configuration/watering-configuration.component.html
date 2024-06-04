@@ -1,0 +1,52 @@
+@if(referenceValues$ | async; as referenceValues) {
+    <form [formGroup]="form">
+            <div class="grid grid-cols-2 mb-2">
+                <div  class="flex items-center">
+                    <mat-label class="block mb-2 text-sm font-medium align-middle">Bewässerungs-Intervall</mat-label>
+                </div>
+                <div class="grid grid-cols-2 gap-1">
+                    <input matInput type="text" formControlName="interval" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500">
+                    <select matNativeControl formControlName = "intervalUnit" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500"> 
+                        @for(name of intervalNames; track name) {
+                            <option [ngValue]="$index">{{name}}</option>
+                        }
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="grid grid-cols-4 mb-2">
+                <div  class="flex items-center col-span-2">
+                    <mat-label class="block mb-2 text-sm font-medium align-middle">Temperatur-Schwelle</mat-label>
+                </div>
+                <div>
+                    <input type="text" id="first_name" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500" matInput type="text" formControlName="temperatureThreshold" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4">
+                <div  class="flex items-center col-span-2">
+                    <mat-label class="block mb-2 text-sm font-medium align-middle">Temperatur-Korrektur</mat-label>
+                </div>
+                <div>
+                    <input type="text" id="first_name" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500" matInput type="text" formControlName="temperatureCorrecture" />
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="config-label">
+                    <mat-label>Temperatur Modifier</mat-label>
+                </div>
+                <div class="input">
+                    <input matInput type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="config-label">
+                    <mat-label>Ziel Boden-Feuchtigkeit</mat-label>
+                </div>
+                <div class="input">
+                    <input matInput type="text">
+                </div>
+            </div>  -->
+    </form>
+}

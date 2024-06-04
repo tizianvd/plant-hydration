@@ -1,0 +1,105 @@
+<!-- 
+
+<lib-component-data-chart></lib-component-data-chart> -->
+
+
+<div class="dashboard-container">
+  <mat-card class="card-container">
+    <mat-card-content>
+      <mat-card class="chart-card">
+        <div class="radio-button-container">
+          <mat-radio-group class="radio-buttons" [(ngModel)]="dateRange" (ngModelChange)="setDataSources()">
+            <span class="radio-button-item"><mat-radio-button [value]="'live'">Live</mat-radio-button></span>
+            <span class="radio-button-item"><mat-radio-button [value]="'quarter'">1 Stunde</mat-radio-button></span>
+            <span class="radio-button-item"><mat-radio-button [value]="'hours'">1 Tag</mat-radio-button></span>
+            <span class="radio-button-item"><mat-radio-button [value]="'days'">1 Monat</mat-radio-button></span>
+            <span class="radio-button-item"><mat-radio-button [value]="'weeks'">6 Monate</mat-radio-button></span>
+            <span class="radio-button-item"><mat-radio-button [value]="'months'">1 Jahr</mat-radio-button></span>
+          </mat-radio-group>
+        </div>
+        <mat-card-content class="chart-container">
+          <div class="chart-sub">
+            <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Temperatur</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <div>
+                    @if ($temperature) {
+                      <lib-component-data-chart [dataLabel]="'Temperature'" [displayLabel]="false" [data]="$temperature" [scaleMax]="50"></lib-component-data-chart>
+                    }
+                </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Luftfeuchtigkeit</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div>
+                  @if ($humidity) {
+                    <lib-component-data-chart [dataLabel]="'Humidity'" [displayLabel]="false" [data]="$humidity" [scaleMin]="0"></lib-component-data-chart>
+                  }
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="chart-sub">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Bodenfeuchtigkeit</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div>
+                  @if ($moisture) {
+                    <lib-component-data-chart [dataLabel]="'Moisture'" [displayLabel]="false" [data]="$moisture"></lib-component-data-chart>
+                  }
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Lichtstärke</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div>
+                  @if ($lightLevel) {
+                    <lib-component-data-chart [dataLabel]="'LightLevel'" [displayLabel]="false" [data]="$lightLevel"></lib-component-data-chart>
+                  }
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="configurations-container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Configurations</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <lib-component-configurations></lib-component-configurations>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Watering Config</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <lib-component-watering-configuration></lib-component-watering-configuration>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Stats</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <lib-component-stats></lib-component-stats>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

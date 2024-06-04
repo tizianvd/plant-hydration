@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Configuration {
+  key       String
+  value     String
+  group     String
+  updatedAt DateTime @updatedAt
+
+  @@id([key, group])
+  @@map("configurations")
+}
+
+model SensorData {
+  id        Int      @id @default(autoincrement())
+  sensorId  String
+  value     Float
+  createdAt DateTime @default(now())
+
+  @@map("sensor_data")
+}

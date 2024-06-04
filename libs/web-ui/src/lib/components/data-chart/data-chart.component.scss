@@ -1,0 +1,20 @@
+.radio-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:baseline;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    .bigValue {
+        font-size: 6em;
+    }
+    .bigValueUnit {
+        font-size: 3em;
+    }
+}

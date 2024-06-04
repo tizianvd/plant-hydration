@@ -1,0 +1,43 @@
+@if(form) {
+    <form [formGroup]="form">
+        <table formGroupName="lcd_display">
+            <tr>
+                <td class="config-label">
+                    <mat-label>Enable LCD</mat-label>
+                </td>
+                <td>
+                    <lib-component-custom-slide-toggle formControlName="status" [checkedValue]="'on'" [uncheckedValue]="'off'"></lib-component-custom-slide-toggle>
+                </td>
+            </tr>
+            <tr>
+                <td class="config-label">
+                    <mat-label>LCD Backlight</mat-label>
+                </td>
+                <td>
+                    <lib-component-custom-slide-toggle formControlName="backlight" [checkedValue]="'on'" [uncheckedValue]="'off'"></lib-component-custom-slide-toggle>
+                </td>
+            </tr>
+
+            <!-- <tr>
+                <td class="config-label">
+                    <mat-label>LCD Brightness</mat-label>
+                </td>
+                <td>
+                    <mat-slider min="0" max="255" step="1">
+                        <input matSliderThumb formControlName="brightness">
+                    </mat-slider>
+                </td>
+            </tr> -->
+        </table>
+        <table formGroupName="pump">
+            <tr>
+                <td class="config-label">
+                    <mat-label>Enable Pump</mat-label>
+                </td>
+                <td>
+                    <lib-component-custom-slide-toggle formControlName="status" [checkedValue]="'on'" [uncheckedValue]="'off'"></lib-component-custom-slide-toggle>
+                </td>
+            </tr>
+        </table>
+    </form>
+}

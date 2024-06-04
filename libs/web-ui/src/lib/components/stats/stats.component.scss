@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+table {
+    tr {
+        .config-label {
+            width: 150px;
+        }
+    }
+}

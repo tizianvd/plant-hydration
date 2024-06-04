@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "sensor_data" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "sensorId" TEXT NOT NULL,
+    "value" REAL NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
